@@ -8,7 +8,7 @@ install_requires = [
 ]
 
 setup(
-    name="login-captcha-secure",
+    name="captcha-varis-main",
     version='1.0',
     url='https://github.com/varisbhalala/captcha-simple.git',
     install_requires=install_requires,

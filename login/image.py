@@ -1,3 +1,4 @@
+from django.shortcuts import render
 import random
 from PIL import Image , ImageDraw , ImageFont
 import hashlib
@@ -24,3 +25,20 @@ class Captcha_Simple():
         im.save(response, 'PNG')
         print(type(im))
         return response
+
+    def login_check(request):
+        if request.POST:
+            # form = LoginForm(request.POST)
+            username = request.POST['username']
+            password = request.POST['password']
+            captcha = request.POST['captcha_text']
+            captcha_input = captcha.encode('utf-8')
+            hash_object = hashlib.sha256(captcha_input)
+            print("username---",hash_object.hexdigest())
+            if username == '1' and password == '1' and hash_object.hexdigest() == request.session['captcha_key']:
+                del request.session['captcha_key']
+                human = True
+                return render(request, 'welcome.html')
+            else:
+                form = LoginForm()
+                return render(request,'login.html' , {'form' : form,'message' : 'Invalid Captcha'})
