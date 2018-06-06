@@ -1,7 +1,6 @@
 from django.urls import path , include
 from . import views
-# from .image import Captcha_Simple
-from login.image import Captcha_Simple
+from .image import Captcha_Simple
 urlpatterns = [
     path('login/', views.login,name='login'),
     path('login_check/' , views.login_check, name="login_check"),
