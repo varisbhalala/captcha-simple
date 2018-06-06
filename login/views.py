@@ -10,7 +10,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 import hashlib
-import mimetypes
+
 # Create your views here.
 def login(request):
     form = LoginForm()
