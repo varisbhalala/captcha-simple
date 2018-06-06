@@ -1,0 +1,5 @@
+setup.py
+captcha_setup.egg-info/PKG-INFO
+captcha_setup.egg-info/SOURCES.txt
+captcha_setup.egg-info/dependency_links.txt
+captcha_setup.egg-info/top_level.txt
