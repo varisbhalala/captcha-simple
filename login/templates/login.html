@@ -8,43 +8,19 @@
         $(document).ready(function(){
             str = '<img src='+'{% url "img_captcha" %}'+ ' style="width: 100px;height: 100px;" id="captcha">';
             $("#img_tag").html(str)
-            $('.js-captcha-refresh').click(function () {
-            // console.log("button-------")
-            // $.ajax({
-            // url :"../img_captcha/",             
-         
-            // success: function(data) { 
-            // /* alert(data); */
-            // // i = new Image()
-            // // i.src = data
-            // var image = new Image();
-            // image.src = 'data:image/png;base64,'+data;
-            // console.log(data)
-            // // str = '<img src='.data.' style="width: 100px;height: 100px;" id="captcha">';
-            // $("#img_tag").html(image)
-            
-            // }
-        // });
-            // $("#captcha").val('src' , "{% url 'img_captcha' %}")
-        
-        });
         });
         </script>
     </head>
     <body>
         <form method="POST" action="{% url 'login_check1' %}">
             {% csrf_token %}
-            <!-- <input type="text" name="username" placeholder="Enter User name">
-            <input type="password" name="password" placeholder="Enter password"> -->
             {{ form }}<br>
             <br>
             <br>
-            <!-- <img src="{% url 'img_captcha' %}" data-src="" alt="" style="width: 100px;height: 100px;" id="captcha"> -->
             <div id="img_tag"></div>
             <input type="text" placeholder="Enter Captcha" name="captcha_text">
             <p style="color: red">{{button}}</p>
-            <input type="submit">
+            <input type="submit" value="Submit">
         </form>
-        <!-- <button class='js-captcha-refresh'>Refresh Captcha</button> -->
     </body>
 </html>
